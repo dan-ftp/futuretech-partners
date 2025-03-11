@@ -1,0 +1,4 @@
+theme = "hello-friend-ng"
+baseURL = 'https://futuretech.partners/'
+languageCode = 'en-us'
+title = 'Future Tech Partners'

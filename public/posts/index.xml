@@ -1,0 +1,23 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Posts on Future Tech Partners</title>
+        <link>http://localhost:1313/posts/</link>
+        <description>Recent content in Posts on Future Tech Partners</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>en-us</language>
+        <lastBuildDate>Tue, 11 Mar 2025 16:12:37 -0400</lastBuildDate>
+        <atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Welcome</title>
+            <link>http://localhost:1313/posts/welcome/</link>
+            <pubDate>Tue, 11 Mar 2025 16:12:37 -0400</pubDate>
+            
+            <guid>http://localhost:1313/posts/welcome/</guid>
+            <description>&lt;p&gt;Hello world! Welcome to my open-source static website hosted on GitHub Pages!&lt;/p&gt;</description>
+            <content type="html"><![CDATA[<p>Hello world! Welcome to my open-source static website hosted on GitHub Pages!</p>
+]]></content>
+        </item>
+        
+    </channel>
+</rss>
