@@ -5,6 +5,8 @@
     </style>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
   </head>
+  <body>
+    <header id="site-nav"></header>
   <h1>
     Lessons from building a deep tech unicorn out of a funding crisis
 </h1>
@@ -122,6 +124,13 @@
     <p>
       © 2025 Future Tech Partners, LLC 
     </p>
+      <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        const slot = document.getElementById('site-nav');
+        const resp = await fetch('/nav.html');
+        slot.innerHTML = await resp.text();
+      });
+      </script>
   </body>
 </html>
 
