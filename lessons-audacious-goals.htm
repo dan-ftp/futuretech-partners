@@ -4,12 +4,20 @@
       body{font-family: "Lucida Console", "Courier New", monospace;margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0 10px}h1,h2,h3{line-height:1.2}
     </style>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <header id="site-nav"></header>
+    <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        const slot = document.getElementById('site-nav');
+        const resp = await fetch('/includes/nav.html');
+        slot.innerHTML = await resp.text();
+      });
+    </script>
   </head>
   <h1>Audacious Goals for an Audacious Startup</h1>
   <p>Creating a successful hard-tech startup demands more than just an innovative idea, it requires articulating a bold vision that inspires both your team and potential investors. At Commonwealth Fusion Systems (CFS), I recognized early on that clearly defining our audacious goals would crystalize our internal strategy and make our path to creating a new industry tangible and compelling.</p>
   <p>My approach was influenced by Jim Collins' concept of the Big, Hairy, Audacious Goal (<a href="https://www.jimcollins.com/concepts/bhag.html">BHAG</a>), a strategy designed to drive transformational growth:
-    <blockquote>The best BHAGs require both building for the long term AND exuding a relentless sense of urgency: What do we need to do today, with monomaniacal focus, and tomorrow, and the next day, to defy the probabilities and ultimately achieve our BHAG?</blockquote> 
-  Collins illustrates this through examples such as Microsoft's early mission "a computer on every desk and in every home," and SpaceX’s bold ambition of "making humans multiplanetary."</p>
+    <blockquote><em>The best BHAGs require both building for the long term AND exuding a relentless sense of urgency: What do we need to do today, with monomaniacal focus, and tomorrow, and the next day, to defy the probabilities and ultimately achieve our BHAG?</em></blockquote> 
+  Collins illustrates this through examples such as Microsoft's early mission of "a computer on every desk and in every home," and SpaceX’s bold ambition of "making humans multiplanetary."</p>
   <p>While Collins’ BHAG framework provided an inspiration, at CFS I adapted it to directly reflect the specific milestones needed to transform our core innovation, high-field superconducting magnets, into an economically viable fusion energy industry. The primary change was adding a series of increasingly audacious goals that built up to the BHAG that CFS is driving to.</p>
   <h2>Crystalizing the Vision</h2>
   <p>CFS began with a clear mission: to become the world’s leading fusion energy company. However, the concrete steps toward realizing that vision needed articulation. We intuitively knew the path: leveraging groundbreaking superconductors to develop high-field magnets, enabling compact, economic fusion power plants. Defining a structured, milestone-driven vision provided the necessary clarity both internally and externally.</p>
