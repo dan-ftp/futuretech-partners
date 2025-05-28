@@ -4,15 +4,9 @@
       body{font-family: "Lucida Console", "Courier New", monospace;margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0 10px}h1,h2,h3{line-height:1.2}
     </style>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
-    <header id="site-nav"></header>
-    <script>
-      document.addEventListener('DOMContentLoaded', async () => {
-        const slot = document.getElementById('site-nav');
-        const resp = await fetch('/includes/nav.html');
-        slot.innerHTML = await resp.text();
-      });
-    </script>
   </head>
+  <body>
+    <header id="site-nav"></header>
   <h1>Audacious Goals for an Audacious Startup</h1>
   <p>Creating a successful hard-tech startup demands more than just an innovative idea, it requires articulating a bold vision that inspires both your team and potential investors. At Commonwealth Fusion Systems (CFS), I recognized early on that clearly defining our audacious goals would crystalize our internal strategy and make our path to creating a new industry tangible and compelling.</p>
   <p>My approach was influenced by Jim Collins' concept of the Big, Hairy, Audacious Goal (<a href="https://www.jimcollins.com/concepts/bhag.html">BHAG</a>), a strategy designed to drive transformational growth:
@@ -57,4 +51,12 @@
   <h2>Conclusions</h2>
   <p>Your startup’s vision must not only be bold and audacious but precisely articulated, structured around clear, measurable milestones that directly resonate with investors and inspire your team. The evolution and crystallization of your goals are a continuous process, but clearly defined audacious goals provide the necessary roadmap for both internal focus and external excitement.</p>
   <p>© 2025 Future Tech Partners, LLC</p>
+    <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        const slot = document.getElementById('site-nav');
+        const resp = await fetch('/includes/nav.html');
+        slot.innerHTML = await resp.text();
+      });
+      </script>
+  </body>
 </html>
