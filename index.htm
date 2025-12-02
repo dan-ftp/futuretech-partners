@@ -9,13 +9,13 @@
     <title>Future Tech Partners</title>
     <meta
       name="description"
-      content="Future Tech Partners helps investors, companies, and technologists turn science fiction into reality through deep-tech strategy, diligence, and advisory."
+      content="Future Tech Partners helps investors, companies, and technologists turn breakthrough technology into reality through deep-tech strategy, diligence, and advisory."
     >
     <link rel="stylesheet" href="/ftp.css">
   </head>
 
   <body>
-    <!-- Site header with logo + nav -->
+    <!-- Shared site header with logo + injected nav -->
     <header class="site-header">
       <div class="site-header-inner">
         <a href="/" class="site-brand">
@@ -26,8 +26,6 @@
           >
           <span class="site-name">Future Tech Partners</span>
         </a>
-
-        <!-- Nav HTML will be injected here -->
         <nav class="site-nav" id="site-nav"></nav>
       </div>
     </header>
@@ -52,3 +50,25 @@
     </p>
   </section>
 </main>
+
+    <!-- Shared footer -->
+    <footer class="site-footer">
+      <p>© 2025 Future Tech Partners, LLC</p>
+    </footer>
+
+    <!-- Nav include script (same as on services.htm) -->
+    <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        const slot = document.getElementById('site-nav');
+        try {
+          const resp = await fetch('/nav.html');
+          if (resp.ok) {
+            slot.innerHTML = await resp.text();
+          }
+        } catch (e) {
+          // fail silently; page remains usable without nav
+        }
+      });
+    </script>
+  </body>
+</html>
