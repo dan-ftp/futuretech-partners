@@ -1,16 +1,56 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <style type="text/css">
-      body{font-family: "Lucida Console", "Courier New", monospace;margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0 10px}h1,h2,h3{line-height:1.2}
-    </style>
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta charset="UTF-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    >
+    <title>Contact – Future Tech Partners</title>
+    <meta
+      http-equiv="content-type"
+      content="text/html; charset=UTF-8"
+    >
+    <link rel="stylesheet" href="/ftp.css">
   </head>
+
   <body>
-    <header id="site-nav"></header>
-    <h3>Contact</h3>
-    <p>Send us an email to see how we can work togther: <a href="mailto:info@futuretech.partners">info@futuretech.partners</a></p>
-    <hr>
-    <p>© 2025 Future Tech Partners, LLC </p>
-    <script>document.addEventListener('DOMContentLoaded', async () => {const slot = document.getElementById('site-nav'); const resp = await fetch('/nav.html'); slot.innerHTML = await resp.text();});</script>
+    <!-- Shared site header with logo + injected nav -->
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a href="/" class="site-brand">
+          <img
+            src="FTP-logo.svg"
+            alt="Future Tech Partners"
+            class="site-logo"
+          >
+          <span class="site-name">Future Tech Partners</span>
+        </a>
+        <nav class="site-nav" id="site-nav"></nav>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="page">
+      <h3>Contact</h3>
+      <p>Send us an email to see how we can work togther: <a href="mailto:info@futuretech.partners">info@futuretech.partners</a></p>
+      <hr>
+      <p>© 2025 Future Tech Partners, LLC </p>
+    </main>
+
+    <!-- Nav include script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        const slot = document.getElementById('site-nav');
+        try {
+          const resp = await fetch('/nav.html');
+          if (resp.ok) {
+            slot.innerHTML = await resp.text();
+          }
+        } catch (e) {
+          // fail silently; page remains usable without nav
+        }
+      });
+    </script>
   </body>
 </html>
