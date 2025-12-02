@@ -1,43 +1,79 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    >
     <title>Future Tech Partners</title>
-    <style type="text/css">
-      body{font-family: "Lucida Console", "Courier New", monospace;margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0 10px}h1,h2,h3{line-height:1.2}
-    </style>
+    <meta
+      name="description"
+      content="Future Tech Partners helps investors, companies, and technologists turn science fiction into reality through deep-tech strategy, diligence, and advisory."
+    >
+    <link rel="stylesheet" href="/ftp.css">
   </head>
+
   <body>
-    <header>
-	    <header id="site-nav"></header>
-	    <img src="FTP-logo.svg" alt="FTP logo" style="width: 100%; height: auto;">
-      <h2>Helping you turn science fiction into reality.</h2>
-      <p>
-	Future Tech Partners is not your typical consultancy. We're scientists and technologists turned entrepreneurs — with the scars and wins to prove it. Our team has built multi-billion-dollar companies, developed first-of-a-kind technologies, and advised investors, government, and industry.
-      </p>
-      <p>
-	We help:
-	<ul>
-	  <li>scientists move their technology out of the lab;</li>
-	  <li>investors assess and de-risk breakthrough tech;</li>
-	  <li>companies prepare for disruption and seize new opportunities; </li>
-	  <li>technologists and policy makers collaborate effectively; and</li>
-	  <li>individuals plan their careers in early stage technologies.</li>
-      </p>
+    <!-- Site header with logo + nav -->
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a href="/" class="site-brand">
+          <img
+            src="FTP-logo.svg"
+            alt="Future Tech Partners"
+            class="site-logo"
+          >
+          <span class="site-name">Future Tech Partners</span>
+        </a>
+
+        <!-- Nav HTML will be injected here -->
+        <nav class="site-nav" id="site-nav"></nav>
+      </div>
     </header>
-    
-      
-    <hr>
-    <p>
-      © 2025 Future Tech Partners, LLC 
-    </p>
-	  <script>
+
+    <!-- Main page content -->
+    <main class="page">
+      <section>
+        <h1>Helping you turn science fiction into reality.</h1>
+
+        <p>
+          Future Tech Partners is not your typical consultancy. We're scientists
+          and technologists turned entrepreneurs — with the scars and wins to
+          prove it. Our team has built multi-billion-dollar companies,
+          developed first-of-a-kind technologies, and advised investors,
+          government, and industry.
+        </p>
+
+        <p>We help:</p>
+        <ul>
+          <li>scientists move their technology out of the lab;</li>
+          <li>investors assess and de-risk breakthrough tech;</li>
+          <li>companies prepare for disruption and seize new opportunities;</li>
+          <li>technologists and policy makers collaborate effectively; and</li>
+          <li>individuals plan their careers in early stage technologies.</li>
+        </ul>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>© 2025 Future Tech Partners, LLC</p>
+    </footer>
+
+    <!-- Simple nav -->
+    <script>
       document.addEventListener('DOMContentLoaded', async () => {
         const slot = document.getElementById('site-nav');
-        const resp = await fetch('/nav.html');
-        slot.innerHTML = await resp.text();
+        try {
+          const resp = await fetch('/nav.html');
+          if (resp.ok) {
+            slot.innerHTML = await resp.text();
+          }
+        } catch (e) {
+          // fail silently; page is still usable without nav
+        }
       });
-      </script>
+    </script>
   </body>
 </html>
