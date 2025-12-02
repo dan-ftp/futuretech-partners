@@ -1,24 +1,87 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <style type="text/css">
-      body{font-family: "Lucida Console", "Courier New", monospace;margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#444;padding:0 10px}h1,h2,h3{line-height:1.2}
-    </style>
-    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta charset="UTF-8">
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    >
+    <title>Partners – Future Tech Partners</title>
+    <meta
+      http-equiv="content-type"
+      content="text/html; charset=UTF-8"
+    >
+    <link rel="stylesheet" href="/ftp.css">
   </head>
+
   <body>
-    <header id="site-nav"></header>
-    <h2>Partners</h2>
-    <h3><a href="https://www.linkedin.com/in/dan-brunner/">Daniel F. Brunner</a>, PhD — Co-Founder of Commonwealth Fusion Systems, Former CTO</h3>
-    <p><em>Available for fractional CTO and deep engagement consulting.</em></p>
-    <p>Dan is a physicist-turned-founder who helped build Commonwealth Fusion Systems (CFS) from an MIT research lab to a unicorn clean tech company. As CTO, he led CFS' technology roadmap and IP strategy while building world class teams to take many of CFS' complex technologies from napkin sketch to engineering design.</p>
-    <p>Dan is a demonstrated scientist and technologist. He's the first author on 13 papers in the field of science fusion and has contributed to over 200 papers in total. He is an inventor on multiple of CFS' critical patents, mostly in the area of high-field superconducting magnets. With his background in a diverse set of deep technologies, Dan is a trusted advisor to hard tech startups, investors, and other innovation leaders.</p>
-    <h3><a href="https://www.linkedin.com/in/edlynlevine/">Edlyn V. Levine</a>, PhD — Co-Founder of a Stealth-Mode Tech Startup, CEO; Co-Founder of America's Frontier Fund, Former CSO; Former Chief Technologist of MITRE</h3>
-    <p><em>Available for short-term, focused engagements.</em></p>
-	  <p>Edlyn specializes in the translation of scientific innovation into scalable impact. She holds a PhD in Applied Physics from Harvard and has worked on a variety of complex technologies in the fields of quantum sensing, fluid dynamics, atmospheric plasmas, and communications.</p>
-    <p>She is currently leading a defense tech startup still in stealth mode as well as a project to use technology to revolutionize landmine detection.</p>
-    <p>Edlyn has taught and collaborated on projects at the Hoover Institution, MIT Sloan, Harvard Kennedy School, and UC Berkeley.</p>
-    <hr>
-    <p>© 2025 Future Tech Partners, LLC </p>
-    <script>document.addEventListener('DOMContentLoaded', async () => {const slot = document.getElementById('site-nav'); const resp = await fetch('/nav.html'); slot.innerHTML = await resp.text();});</script>
+    <!-- Shared site header with logo + injected nav -->
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a href="/" class="site-brand">
+          <img
+            src="FTP-logo.svg"
+            alt="Future Tech Partners"
+            class="site-logo"
+          >
+          <span class="site-name">Future Tech Partners</span>
+        </a>
+        <nav class="site-nav" id="site-nav"></nav>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="page">
+      <h1>Partners</h1>
+
+      <h3>
+        <a href="https://www.linkedin.com/in/dan-brunner/">
+          Daniel F. Brunner
+        </a>, PhD — Co-Founder of Commonwealth Fusion Systems, Former CTO
+      </h3>
+      <p><em>Available for fractional CTO and deep engagement consulting.</em></p>
+      <p>
+        Dan is a physicist-turned-founder who helped build Commonwealth Fusion Systems (CFS) from an MIT research lab to a unicorn clean tech company. As CTO, he led CFS' technology roadmap and IP strategy while building world class teams to take many of CFS' complex technologies from napkin sketch to engineering design.
+      </p>
+      <p>
+        Dan is a demonstrated scientist and technologist. He's the first author on 13 papers in the field of science fusion and has contributed to over 200 papers in total. He is an inventor on multiple of CFS' critical patents, mostly in the area of high-field superconducting magnets. With his background in a diverse set of deep technologies, Dan is a trusted advisor to hard tech startups, investors, and other innovation leaders.
+      </p>
+
+      <h3>
+        <a href="https://www.linkedin.com/in/edlynlevine/">
+          Edlyn V. Levine
+        </a>, PhD — Co-Founder of a Stealth-Mode Tech Startup, CEO; Co-Founder of America's Frontier Fund, Former CSO; Former Chief Technologist of MITRE
+      </h3>
+      <p><em>Available for short-term, focused engagements.</em></p>
+      <p>
+        Edlyn specializes in the translation of scientific innovation into scalable impact. She holds a PhD in Applied Physics from Harvard and has worked on a variety of complex technologies in the fields of quantum sensing, fluid dynamics, atmospheric plasmas, and communications.
+      </p>
+      <p>
+        She is currently leading a defense tech startup still in stealth mode as well as a project to use technology to revolutionize landmine detection.
+      </p>
+      <p>
+        Edlyn has taught and collaborated on projects at the Hoover Institution, MIT Sloan, Harvard Kennedy School, and UC Berkeley.
+      </p>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <p>© 2025 Future Tech Partners, LLC </p>
+    </footer>
+
+    <!-- Nav include script -->
+    <script>
+      document.addEventListener('DOMContentLoaded', async () => {
+        const slot = document.getElementById('site-nav');
+        try {
+          const resp = await fetch('/nav.html');
+          if (resp.ok) {
+            slot.innerHTML = await resp.text();
+          }
+        } catch (e) {
+          // fail silently; page remains usable without nav
+        }
+      });
+    </script>
   </body>
 </html>
