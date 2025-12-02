@@ -365,3 +365,7 @@ img {
     text-align: left;
   }
 }
+
+.site-name {
+  display: none;
+}
