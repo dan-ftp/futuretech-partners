@@ -31,49 +31,24 @@
         <nav class="site-nav" id="site-nav"></nav>
       </div>
     </header>
+    
+<main class="page">
+  <section>
+    <h1>Helping you turn science fiction into reality.</h1>
 
-    <!-- Main page content -->
-    <main class="page">
-      <section>
-        <h1>Helping you turn science fiction into reality.</h1>
+    <p>
+      Future Tech Partners is a boutique advisory for fusion energy and other
+      frontier technologies where the physics, engineering, and industrialization
+      challenges are real. We bring together deep technical experience,
+      commercialization scars, and investor perspective.
+    </p>
 
-        <p>
-          Future Tech Partners is not your typical consultancy. We're scientists
-          and technologists turned entrepreneurs — with the scars and wins to
-          prove it. Our team has built multi-billion-dollar companies,
-          developed first-of-a-kind technologies, and advised investors,
-          government, and industry.
-        </p>
-
-        <p>We help:</p>
-        <ul>
-          <li>scientists move their technology out of the lab;</li>
-          <li>investors assess and de-risk breakthrough tech;</li>
-          <li>companies prepare for disruption and seize new opportunities;</li>
-          <li>technologists and policy makers collaborate effectively; and</li>
-          <li>individuals plan their careers in early stage technologies.</li>
-        </ul>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="site-footer">
-      <p>© 2025 Future Tech Partners, LLC</p>
-    </footer>
-
-    <!-- Simple nav -->
-    <script>
-      document.addEventListener('DOMContentLoaded', async () => {
-        const slot = document.getElementById('site-nav');
-        try {
-          const resp = await fetch('/nav.html');
-          if (resp.ok) {
-            slot.innerHTML = await resp.text();
-          }
-        } catch (e) {
-          // fail silently; page is still usable without nav
-        }
-      });
-    </script>
-  </body>
-</html>
+    <p>
+      We work with companies, investors, suppliers, utilities, hyperscalers,
+      industrial offtakers, and public-sector leaders who need clear thinking
+      about what is possible, on what timeline, and with what risks.
+    </p>
+    
+    </p>
+  </section>
+</main>
