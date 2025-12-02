@@ -1,0 +1,367 @@
+/* =========================================================
+   Future Tech Partners – ftp.css
+   A small, Bringhurst-inspired typographic stylesheet
+   ====================================================== */
+
+/* ---------- Root variables: easy theming ---------- */
+
+:root {
+  /* Font stacks – all system / preinstalled */
+  --font-body: "Iowan Old Style", "Palatino", "Book Antiqua",
+               "Georgia", "Times New Roman", serif;
+  --font-heading: "Iowan Old Style", "Palatino", "Book Antiqua",
+                  "Georgia", "Times New Roman", serif;
+  --font-mono: "SF Mono", "Menlo", "Consolas", "Liberation Mono", monospace;
+
+  /* Color palette – adjust to match Fusion Conclusion if you like */
+  --color-bg: #f5f2ea;        /* page surround */
+  --color-page: #ffffff;      /* main reading surface (if used) */
+  --color-text: #151515;
+  --color-muted: #666666;
+  --color-border: #ded8c8;
+  --color-accent: #0c4f6e;    /* link + subtle accents */
+
+  /* Typographic system */
+  --measure: 66ch;            /* ideal line length */
+  --line-height-body: 1.5;
+  --line-height-heading: 1.2;
+}
+
+/* ---------- Base reset-ish layer ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 2.5rem 1.5rem 4rem;
+  font-family: var(--font-body);
+  font-size: clamp(1.02rem, 0.98rem + 0.25vw, 1.15rem);
+  line-height: var(--line-height-body);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+
+  max-width: var(--measure);
+  margin-left: auto;
+  margin-right: auto;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  font-kerning: normal;
+}
+
+/* Optional “card” feel on large screens */
+@media (min-width: 960px) {
+  body {
+    background-color: var(--color-bg);
+    max-width: calc(var(--measure) + 8rem);
+    padding: 3.5rem 3rem 5rem;
+  }
+
+  .page {
+    max-width: var(--measure);
+    margin: 0 auto;
+    padding: 2.5rem 3rem 3rem;
+    background-color: var(--color-page);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+  }
+}
+
+/* If you wrap content in <div class="page"> it will get the card styling.
+   If not, everything still looks fine because the body already has the
+   centered, measured layout. */
+
+
+/* ---------- Basic block-level typography ---------- */
+
+p,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+table,
+figure {
+  margin-top: 1rem;
+  margin-bottom: 0;
+}
+
+/* Paragraph rhythm: follow-on paragraphs slightly closer */
+p + p {
+  margin-top: 0.75rem;
+}
+
+/* Avoid ugly single-word lines (where supported) */
+p {
+  orphans: 3;
+  widows: 3;
+  hanging-punctuation: first;
+  hyphens: auto;
+}
+
+strong,
+b {
+  font-weight: 600;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+/* ---------- Headings: simple modular scale ---------- */
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-heading);
+  font-weight: 500;
+  line-height: var(--line-height-heading);
+  margin-top: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+h1 {
+  font-size: clamp(1.9rem, 1.6rem + 0.8vw, 2.3rem);
+}
+
+h2 {
+  font-size: clamp(1.6rem, 1.4rem + 0.6vw, 1.9rem);
+}
+
+h3 {
+  font-size: clamp(1.3rem, 1.2rem + 0.3vw, 1.5rem);
+}
+
+h4 {
+  font-size: 1.1rem;
+  text-transform: none;
+}
+
+/* Reduce top margin if a heading is the first element on the page/section */
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child {
+  margin-top: 0;
+}
+
+/* Section spacing when using <section> elements */
+section + section {
+  margin-top: 3rem;
+}
+
+/* ---------- Navigation + header (optional classes) ---------- */
+
+.site-header {
+  margin-bottom: 2rem;
+}
+
+.site-header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem 1.5rem;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-logo {
+  max-height: 40px;
+  width: auto;
+}
+
+.site-name {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.site-tagline {
+  flex: 1 1 100%;
+  margin-top: 0.25rem;
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+.site-nav {
+  margin-left: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 0.05em;
+}
+
+.site-nav a:hover,
+.site-nav a:focus {
+  border-bottom-color: var(--color-accent);
+}
+
+/* On narrow screens, stack header / nav vertically */
+@media (max-width: 640px) {
+  .site-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .site-nav {
+    margin-left: 0;
+  }
+}
+
+/* ---------- Links ---------- */
+
+a {
+  color: var(--color-accent);
+  text-decoration: underline;
+  text-decoration-thickness: 0.06em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover,
+a:focus {
+  text-decoration-thickness: 0.09em;
+}
+
+/* Don’t underline plain nav links by default (handled above) */
+.site-nav a {
+  text-decoration: none;
+}
+
+/* ---------- Lists ---------- */
+
+ul,
+ol {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-top: 0.25rem;
+}
+
+ul ul,
+ul ol,
+ol ul,
+ol ol {
+  margin-top: 0.25rem;
+}
+
+/* ---------- Blockquotes ---------- */
+
+blockquote {
+  margin-left: 0;
+  padding-left: 1rem;
+  border-left: 2px solid var(--color-border);
+  font-style: italic;
+  color: var(--color-muted);
+}
+
+/* ---------- Code + preformatted ---------- */
+
+code,
+kbd,
+samp {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+}
+
+pre {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  line-height: 1.4;
+  padding: 0.75rem 1rem;
+  background-color: #f2eee4;
+  border-radius: 3px;
+  overflow-x: auto;
+}
+
+/* ---------- Tables ---------- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 0.95em;
+}
+
+th,
+td {
+  padding: 0.4rem 0.25rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-border);
+}
+
+th {
+  font-weight: 600;
+}
+
+/* ---------- Horizontal rule ---------- */
+
+hr {
+  border: 0;
+  border-top: 1px solid var(--color-border);
+  margin: 2rem 0;
+}
+
+/* ---------- Images ---------- */
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* The logo (if you give it class="site-logo") is already handled above. */
+
+/* ---------- Small caps, meta text, etc. ---------- */
+
+.smallcaps {
+  font-variant: small-caps;
+  letter-spacing: 0.04em;
+}
+
+.meta,
+.note {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+  font-size: 0.9rem;
+  color: var(--color-muted);
+}
+
+/* Center footer text on small screens */
+@media (max-width: 640px) {
+  .site-footer {
+    text-align: left;
+  }
+}
